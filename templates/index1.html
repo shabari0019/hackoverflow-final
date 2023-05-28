@@ -1,0 +1,58 @@
+{% include "header.html" %}
+  <header class="masthead" style="background-image: url('https://t4.ftcdn.net/jpg/02/28/28/43/360_F_228284355_0cSvHoDW465ievWuRCT49Bw6bPwTWbeN.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Into Job</h1>
+            <span class="subheading">Get Your Dream Job</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h3 style="text-align:center;">Recommended Jobs</h3>
+
+        {% for all_posts,match in posts.items() %}
+        {% for post in all_posts %}
+
+        <div class="post-preview">
+          <a href="{{ url_for('show_post', post_id=post.id) }}">
+            <h2 class="post-title">
+              {{post.title}}
+            </h2>
+            <h5 class="post-subtitle">
+              {{match}} % match
+
+            </h5>
+          </a>
+          <p class="post-meta">Posted by
+            {{post.cname}}
+            on {{post.date}}
+            {% if current_user.id == 1: %}
+            <a href="{{url_for('delete_post', post_id=post.id) }}">Delete</a>
+            {% endif %}
+          </p>
+        </div>
+        {% endfor %}
+        {% endfor %}
+
+
+        {% if current_user.id == 1: %}
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="{{url_for('add_new_post')}}">Create New Job</a>
+        </div>
+        {% endif %}
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="{{url_for('get_all_posts')}}">View All </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+{% include "footer.html" %}

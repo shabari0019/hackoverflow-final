@@ -1,0 +1,54 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header.html" %}
+
+
+
+<header class="masthead" style="background-image: url('{{post.img_url}}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+                    <h1>{{post.title}}</h1>
+                    <h2 class="subheading">{{post.subtitle}}</h2>
+                    <span class="meta">Posted by
+              {{post.cname}}
+              on {{post.date}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {{ post.body|safe }}
+                <hr>
+                {% if current_user.id == 1 %}
+
+                <div class="clearfix">
+                    <a class="btn btn-primary float-right" href="{{url_for('edit_post', post_id=post.id)}}">Edit
+                        JD</a>
+                    {% if current_user.is_authenticated: %}
+                    <a class="btn btn-primary float-left" href="{{url_for('test',post_id=post.id)}}">Take Test</a>
+                    {% endif %}
+
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+
+{% include "footer.html" %}
+{% endblock %}
