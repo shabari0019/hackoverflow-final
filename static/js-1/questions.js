@@ -1,12 +1,12 @@
 const questions = [
   {
-    numb:56,
-    question: "___ is a virtual python environment builder",
-    answer: "virtualenv",
+    numb:53,
+    question: "what is the framework used for writing command line applications?",
+    answer: "click",
     options: [
-      "venv",
-      "env",
-      "virtualenv",
+      "markupsafe",
+      "jinja",
+      "click",
       "none of the above",
     ]
   },
@@ -22,47 +22,25 @@ const questions = [
     ]
   },
   {
-    numb:43,
-    question: "which of the following are types of unicode character string types in SQL?",
-    answer: "a&b",
+    numb:45,
+    question: "which of the following datatype is most appropriate for storing string of 255 charecters?",
+    answer: "tiny text",
     options: [
-      "nchar",
-      "ntext",
-      "a&b",
-      "none",
+      "text",
+      "tiny text",
+      "blob",
+      "binary",
     ]
   },
   {
-    numb:47,
-    question: "abbrevate DDL",
-    answer: "data definiton language",
+    numb:49,
+    question: "which of the following allows you to identify a tuple",
+    answer: "super key",
     options: [
-      "data definition language",
-      "data derivation language",
-      "dynamic data language",
-      "detailed data language",
-    ]
-  },
-  {
-    numb:14,
-    question: "Which of the following is “address of operator ?",
-    answer: "&",
-    options: [
-      "^",
-      ".",
-      "[]",
-      "&",
-    ]
-  },
-  {
-    numb:16,
-    question: "Which of the following loops is best when we know the number of iterations?",
-    answer: "for loop",
-    options: [
-      "none",
-      "while",
-      "for loop",
-      "do while",
+      "schema",
+      "attribute",
+      "super key",
+      "domain",
     ]
   },
 ];

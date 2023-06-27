@@ -256,13 +256,13 @@ def test(post_id):
         "CSS":0,
         "C++":10,
        "C":20,
-        "PYTHON":30,
+        "PYTHON ":30,
 
         "SQL":40,
         "FLASK":50
 
     }
-    domainl = ["C++","SQL","PYTHON","CSS","C","FLASK"]
+    domainl = ["C++","SQL","PYTHON ","CSS","C","FLASK"]
     start =[]
     for item in list1:
         if item in domainl:
